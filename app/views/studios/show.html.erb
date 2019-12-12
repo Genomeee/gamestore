@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @studio.name %>
+</p>
+
+<p>
+  <strong>Founder:</strong>
+  <%= @studio.founder %>
+</p>
+<strong>Games:</strong>
+<% @studio.games.each do |game|%>
+  <div class="portfolio">
+      <p><%= game.name %></p>
+    <% end %>
+  </div>
+<%= link_to 'Edit', edit_studio_path(@studio) %> |
+<%= link_to 'Back', studios_path %>

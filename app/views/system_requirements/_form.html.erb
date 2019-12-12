@@ -1,0 +1,51 @@
+<%= form_with(model: system_requirement, local: true) do |form| %>
+  <% if system_requirement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(system_requirement.errors.count, "error") %> prohibited this system_requirement from being saved:</h2>
+
+      <ul>
+      <% system_requirement.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :system %>
+    <%= form.text_field :system %>
+  </div>
+
+  <div class="field">
+    <%= form.label :memory %>
+    <%= form.number_field :memory %>
+  </div>
+
+  <div class="field">
+    <%= form.label :processor %>
+    <%= form.text_field :processor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :graphicsCard %>
+    <%= form.text_field :graphicsCard %>
+  </div>
+
+  <div class="field">
+    <%= form.label :space %>
+    <%= form.number_field :space %>
+  </div>
+
+<!--  <div class="field">-->
+    <%#= form.label :games_id %>
+    <%#= form.number_field :games_id %>
+<!--  </div>-->
+
+  <div class="field">
+    <%= form.collection_select :game_id, Game.order(:name), :id, :name%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

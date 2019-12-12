@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @game.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @game.price %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @game.genre %>
+</p>
+
+<p>
+  <strong>Studio:</strong>
+  <%= @game.studio.try(:name)%>
+</p>
+
+<p>
+  <strong>SystemRequirements:</strong>
+  <p>Memory : <%= @game.system_requirement.try(:memory)%></p>
+  <p>Space : <%= @game.system_requirement.try(:space)%></p>
+  <p>System : <%= @game.system_requirement.try(:system)%></p>
+  <p>Graphic card : <%= @game.system_requirement.try(:graphicsCard)%></p>
+  <p>Processor : <%= @game.system_requirement.try(:processor)%></p>
+
+</p>
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>

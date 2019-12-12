@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>System:</strong>
+  <%= @system_requirement.system %>
+</p>
+
+<p>
+  <strong>Memory:</strong>
+  <%= @system_requirement.memory %>
+</p>
+
+<p>
+  <strong>Processor:</strong>
+  <%= @system_requirement.processor %>
+</p>
+
+<p>
+  <strong>Graphicscard:</strong>
+  <%= @system_requirement.graphicsCard %>
+</p>
+
+<p>
+  <strong>Space:</strong>
+  <%= @system_requirement.space %>
+</p>
+
+<%= link_to 'Edit', edit_system_requirement_path(@system_requirement) %> |
+<%= link_to 'Back', system_requirements_path %>
