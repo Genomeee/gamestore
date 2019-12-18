@@ -1,35 +1,48 @@
 <p id="notice"><%= notice %></p>
 
-<h1>System Requirements</h1>
+<section class="games-section">
+  <div class="page-info">
 
-<table>
-  <thead>
-    <tr>
-      <th>System</th>
-      <th>Memory</th>
-      <th>Processor</th>
-      <th>Graphicscard</th>
-      <th>Space</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <h2>System Requirements</h2>
 
-  <tbody>
-    <% @system_requirements.each do |system_requirement| %>
-      <tr>
-        <td><%= system_requirement.system %></td>
-        <td><%= system_requirement.memory %></td>
-        <td><%= system_requirement.processor %></td>
-        <td><%= system_requirement.graphicsCard %></td>
-        <td><%= system_requirement.space %></td>
-        <td><%= link_to 'Show', system_requirement %></td>
-        <td><%= link_to 'Edit', edit_system_requirement_path(system_requirement) %></td>
-        <td><%= link_to 'Destroy', system_requirement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div class="site-breadcrumb">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>System</th>
+          <th>Memory</th>
+          <th>Processor</th>
+          <th>Graphicscard</th>
+          <th>Space</th>
+          <th colspan="3"></th>
+        </tr>
+        </thead>
+
+
+        <tbody>
+        <% @system_requirements.each do |system_requirement| %>
+          <tr>
+            <td><%= system_requirement.system %></td>
+            <td><%= system_requirement.memory %></td>
+            <td><%= system_requirement.processor %></td>
+            <td><%= system_requirement.graphicsCard %></td>
+            <td><%= system_requirement.space %></td>
+            <td><%= link_to 'Show', system_requirement %></td>
+            <% if signed_in? -%>
+            <td><%= link_to 'Edit', edit_system_requirement_path(system_requirement) %></td>
+            <td><%= link_to 'Destroy', system_requirement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% else -%>
+            <% end -%>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <% if signed_in? -%>
+      <%= link_to 'New System Requirement', new_system_requirement_path %>
+      <% else -%>
+      <% end -%>
+    </div>
+  </div>
+</section>
 
 <br>
-
-<%= link_to 'New System Requirement', new_system_requirement_path %>

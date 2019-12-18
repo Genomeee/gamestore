@@ -1,5 +1,9 @@
-<h1>New Studio</h1>
+<div id="preloder">
+  <div class="loader"></div>
+</div>
+
+<h1 style="color: #FFFFFF">New Studio</h1>
 
 <%= render 'form', studio: @studio %>
 
-<%= link_to 'Back', studios_path %>
+<%= link_to 'Back', studios_path, {:class => 'btn'} %>

@@ -1,19 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<div id="preloder">
+  <div class="loader"></div>
+</div>
+<div class="games-section">
+<p class="page-text">
   <strong>Name:</strong>
   <%= @studio.name %>
 </p>
 
-<p>
+<p class="page-text">
   <strong>Founder:</strong>
   <%= @studio.founder %>
 </p>
-<strong>Games:</strong>
+<strong class="page-text">Games:</strong>
 <% @studio.games.each do |game|%>
-  <div class="portfolio">
-      <p><%= game.name %></p>
+  <div class="portfolio page-text">
+      <p class="page-text"><%= game.name %></p>
     <% end %>
   </div>
+<% if signed_in? -%>
 <%= link_to 'Edit', edit_studio_path(@studio) %> |
+<% else -%>
+<% end -%>
 <%= link_to 'Back', studios_path %>
+</div>

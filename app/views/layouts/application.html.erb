@@ -1,15 +1,69 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>GameStore</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <%= csrf_meta_tag %>
+  <title>Endgame</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application" %>
+  <%=image_tag("page-top-bg/1.jpg", alt: "Example Image")%>
+  <%=image_tag("page-top-bg/2.jpg", alt: "Example Image")%>
+  <%=image_tag("page-top-bg/3.jpg", alt: "Example Image")%>
+  <%=image_tag("page-top-bg/4.jpg", alt: "Example Image")%>
+  <%=image_tag("logo.png", alt: "Example Image")%>
+</head>
+<body>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<header class="header-section">
+  <div class="header-warp">
+    <div class="header-social d-flex justify-content-end">
+    </div>
+    <div class="header-bar-warp d-flex">
+      <!-- site logo -->
+      <a href="/" class="site-logo">
+        <%=image_tag("logo.png", alt: "Example Image")%>
+      </a>
+      <nav class="top-nav-area w-100">
+        <div class="user-panel">
+          <% if signed_in? -%>
+            <%= link_to t(".sign_out"), sign_out_path, method: :delete %>
+          <% else -%>
+            <%= link_to t(".sign_in"), sign_in_path %>
+          <% end -%>
+          / <a href="/sign_up">Register</a>
+        </div>
+        <!-- Menu -->
 
-  <body>
-    <%= yield %>
-  </body>
+        <ul class="main-menu primary-menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/games">Games</a></li>
+          <li><a href="/studios">Studios</a></li>
+          <li><a href="/system_requirements">SysReq</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+<!--  <div id="header">-->
+    <%# if signed_in? -%>
+      <%#= button_to t(".sign_out"), sign_out_path, method: :delete %>
+    <%# else -%>
+      <%#= link_to t(".sign_in"), sign_in_path %>
+    <%# end -%>
+<!--  </div>-->
+
+  <div id="flash">
+    <% flash.each do |key, value| -%>
+      <div id="flash_<%= key %>"><%=h value %></div>
+    <% end %>
+  </div>
+
+  <%= yield %>
+</body>
 </html>

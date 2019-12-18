@@ -1,3 +1,4 @@
+
 <%= form_with(model: game, local: true) do |form| %>
   <% if game.errors.any? %>
     <div id="error_explanation">
@@ -10,25 +11,25 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+<div class=""></div>
+  <div class="field page-text">
+    <%= form.label :name, {:class => 'textStyle'} %>
+    <%= form.text_field :name, {:class => 'form-control, fieldStyle'} %>
   </div>
 
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price %>
+  <div class="field page-text">
+    <%= form.label :price, {:class => 'textStyle'} %>
+    <%= form.number_field :price, {:class => 'form-control, fieldStyle'}  %>
   </div>
 
-  <div class="field">
-    <%= form.label :genre %>
-    <%= form.text_field :genre %>
+  <div class="field page-text">
+    <%= form.label :genre, {:class => 'textStyle'} %>
+    <%= form.text_field :genre,  {:class => 'form-control, fieldStyle'}  %>
   </div>
 
-  <div class="field">
-    <%= form.label :studio_id %>
-    <%= form.collection_select :studio_id, Studio.order(:name), :id, :name%>
+  <div class="field page-text fieldStyle" style="margin-left: 28%">
+    <%= form.label :studio_id, {:class => 'textStyleSecond'} %>
+    <%= form.collection_select :studio_id, Studio.order(:name), :id, :name, {:class => 'form-control, fieldStyle'}%>
   </div>
 
   <div class="actions">

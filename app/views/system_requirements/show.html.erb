@@ -1,29 +1,32 @@
 <p id="notice"><%= notice %></p>
-
-<p>
+<div class="games-section">
+<p class="page-text">
   <strong>System:</strong>
   <%= @system_requirement.system %>
 </p>
 
-<p>
+<p class="page-text">
   <strong>Memory:</strong>
   <%= @system_requirement.memory %>
 </p>
 
-<p>
+<p class="page-text">
   <strong>Processor:</strong>
   <%= @system_requirement.processor %>
 </p>
 
-<p>
+<p class="page-text">
   <strong>Graphicscard:</strong>
   <%= @system_requirement.graphicsCard %>
 </p>
 
-<p>
+<p class="page-text">
   <strong>Space:</strong>
   <%= @system_requirement.space %>
 </p>
-
+<% if signed_in? -%>
 <%= link_to 'Edit', edit_system_requirement_path(@system_requirement) %> |
-<%= link_to 'Back', system_requirements_path %>
+<% else -%>
+<% end -%>
+<%= link_to 'Back', system_requirements_path ,class: "btn btn-inverse", style: "margin-left:4%"%>
+</div>

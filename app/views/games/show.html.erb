@@ -1,34 +1,46 @@
 <p id="notice"><%= notice %></p>
+<div id="preloder">
+  <div class="loader"></div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @game.name %>
-</p>
+<section class="games-section">
+  <div class="page-info">
+    <h2> <%= @game.name %></h2>
+    <br>
+    <br>
+    <div class="site-breadcrumb">
+      <p class="page-text">
+        <strong>SystemRequirements:</strong>
+      <p class="page-text">Memory : <%= @game.system_requirement.try(:memory)%></p>
+      <p class="page-text">Space : <%= @game.system_requirement.try(:space)%></p>
+      <p class="page-text">System : <%= @game.system_requirement.try(:system)%></p>
+      <p class="page-text">Graphic card : <%= @game.system_requirement.try(:graphicsCard)%></p>
+      <p class="page-text">Processor : <%= @game.system_requirement.try(:processor)%></p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @game.price %>
-</p>
+      </p>
+      <p class="page-text">
+        <strong>Price:</strong>
+        <%= @game.price %>
+      </p>
 
-<p>
-  <strong>Genre:</strong>
-  <%= @game.genre %>
-</p>
+      <p class="page-text">
+        <strong>Genre:</strong>
+        <%= @game.genre %>
+      </p>
 
-<p>
-  <strong>Studio:</strong>
-  <%= @game.studio.try(:name)%>
-</p>
+      <p class="page-text">
+        <strong>Studio:</strong>
+        <%= @game.studio.try(:name)%>
+      </p>
 
-<p>
-  <strong>SystemRequirements:</strong>
-  <p>Memory : <%= @game.system_requirement.try(:memory)%></p>
-  <p>Space : <%= @game.system_requirement.try(:space)%></p>
-  <p>System : <%= @game.system_requirement.try(:system)%></p>
-  <p>Graphic card : <%= @game.system_requirement.try(:graphicsCard)%></p>
-  <p>Processor : <%= @game.system_requirement.try(:processor)%></p>
+      <%= link_to 'Edit', edit_game_path(@game), class: "btn btn-inverse" %> |
+      <%= link_to 'Back', games_path, class: "btn btn-inverse" %>
 
-</p>
+    </div>
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
+  </div>
+
+</section>
+
+
+

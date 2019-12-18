@@ -1,29 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Studios</h1>
+<!-- Page top section -->
+<section class="games-section">
+  <div class="page-info">
+    <h2>Studios</h2>
+    <div class="site-breadcrumb">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Founder</th>
+          <th colspan="3"></th>
+        </tr>
+        </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Founder</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @studios.each do |studio| %>
-      <tr>
-        <td><%= studio.name %></td>
-        <td><%= studio.founder %></td>
-        <td><%= link_to 'Show', studio %></td>
-        <td><%= link_to 'Edit', edit_studio_path(studio) %></td>
-        <td><%= link_to 'Destroy', studio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tbody class="game-item">
+        <% @studios.each do |studio| %>
+          <tr>
+            <td><%= studio.name %></td>
+            <td><%= studio.founder %></td>
+            <td><%= link_to 'Show', studio %></td>
+            <% if signed_in? -%>
+            <td><%= link_to 'Edit', edit_studio_path(studio) %></td>
+            <td><%= link_to 'Destroy', studio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% else -%>
+            <% end -%>
+          </tr>
+        <% end %>
 
-<br>
-
-<%= link_to 'New Studio', new_studio_path %>
+        </tbody>
+      </table>
+      <% if signed_in? -%>
+      <%= link_to 'New Studio', new_studio_path %>
+      <% else -%>
+      <% end -%>
+    </div>
+  </div>
+</section>
+<!-- Page top end-->
