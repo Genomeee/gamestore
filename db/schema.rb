@@ -37,10 +37,8 @@ ActiveRecord::Schema.define(version: 2019_12_12_171737) do
     t.string "processor"
     t.string "graphicsCard"
     t.integer "space"
-    t.integer "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["game_id"], name: "index_system_requirements_on_game_id"
   end
 
   create_table "users", force: :cascade do |t|
