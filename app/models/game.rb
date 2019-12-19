@@ -5,5 +5,5 @@ class Game < ApplicationRecord
   validates :studio_id,:presence => {:message => " is required"}
 
   belongs_to :studio
-  has_one :system_requirement
+  belongs_to :system_requirement
 end
