@@ -1,22 +1,24 @@
+<div class="games-section">
 <%= form_for :session, url: session_path do |form| %>
-  <div class="text-field">
+  <div class="text-field page-text">
     <%= form.label :email %>
     <%= form.text_field :email, type: 'email' %>
   </div>
 
-  <div class="password-field">
+  <div class="password-field page-text">
     <%= form.label :password %>
     <%= form.password_field :password %>
   </div>
 
-  <div class="submit-field">
-    <%= form.submit %>
+  <div class="submit-field" style="width: 17%; margin-top: 20px; margin-left: 70px">
+    <%= form.submit ({:class => 'btn btn-success, form-control'})%>
   </div>
 
-  <div class="other-links">
+  <div class="other-links" style="margin-left: 70px">
     <% if Clearance.configuration.allow_sign_up? %>
       <%= link_to t(".sign_up"), sign_up_path %>
     <% end %>
     <%= link_to t(".forgot_password"), new_password_path %>
   </div>
 <% end %>
+</div>
