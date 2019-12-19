@@ -6,6 +6,7 @@ class CreateSystemRequirements < ActiveRecord::Migration[5.2]
       t.string :processor
       t.string :graphicsCard
       t.integer :space
+      t.references :game, foreign_key: true
 
       t.timestamps
     end
