@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2019_12_12_171737) do
     t.integer "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["game_id"], name: "index_system_requirements_on_game_id"
+    #t.index ["game_id"], name: "index_system_requirements_on_game_id"
   end
 
   create_table "games", force: :cascade do |t|
