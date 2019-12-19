@@ -24,5 +24,14 @@ namespace :db do
       studio.founder=Faker::Name.name
       i+=1
     end
+    i=1
+    SystemRequirement.populate(10) do |system_requirement|
+      system_requirement.processor=Faker::Space.company
+      system_requirement.space=Faker::Space.name
+      system_requirement.graphicsCard=Faker::Space.galaxy
+      system_requirement.system=Faker::Space.meteorite
+      system_requirement.memory=Faker::Space.planet
+      i+=1
+    end
   end
 end
