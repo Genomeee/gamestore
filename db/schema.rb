@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2019_12_12_171737) do
     t.integer "system_requirement_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["studio_id"], name: "index_games_on_studio_id"
-    t.index ["system_requirement_id"], name: "index_games_on_system_requirement_id"
+    t.index ["studio_id"], name: "index_games_on_studio_id", unique: true
+    t.index ["system_requirement_id"], name: "index_games_on_system_requirement_id", unique: true
   end
 
   create_table "studios", force: :cascade do |t|
@@ -37,8 +37,10 @@ ActiveRecord::Schema.define(version: 2019_12_12_171737) do
     t.string "processor"
     t.string "graphicsCard"
     t.integer "space"
+    t.integer "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_system_requirements_on_game_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|

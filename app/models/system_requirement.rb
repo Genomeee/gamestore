@@ -5,5 +5,5 @@ class SystemRequirement < ApplicationRecord
   validates :space, :presence => {:message => " is required"}
   validates :system, :presence => {:message => " is required"}
   validates :memory, :presence => {:message => " is required"}
-  belongs_to :game
+  belong_to :game
 end

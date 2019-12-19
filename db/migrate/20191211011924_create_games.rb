@@ -4,8 +4,8 @@ class CreateGames < ActiveRecord::Migration[5.2]
       t.string :name
       t.integer :price
       t.string :genre
-      t.references :studio, foreign_key: true
-      t.references :system_requirement, foreign_key: true
+      t.belongs_to :studio, index: { unique: true }, foreign_key: true
+      t.belongs_to :system_requirement, index: { unique: true }, foreign_key: true
 
       t.timestamps
     end
