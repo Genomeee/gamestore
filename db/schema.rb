@@ -12,18 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2019_12_12_171737) do
 
-  create_table "system_requirements", force: :cascade do |t|
-    t.string "system"
-    t.integer "memory"
-    t.string "processor"
-    t.string "graphicsCard"
-    t.integer "space"
-    t.integer "game_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    #t.index ["game_id"], name: "index_system_requirements_on_game_id"
-  end
-
   create_table "games", force: :cascade do |t|
     t.string "name"
     t.integer "price"
@@ -43,6 +31,17 @@ ActiveRecord::Schema.define(version: 2019_12_12_171737) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "system_requirements", force: :cascade do |t|
+    t.string "system"
+    t.integer "memory"
+    t.string "processor"
+    t.string "graphicsCard"
+    t.integer "space"
+    t.integer "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_system_requirements_on_game_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
