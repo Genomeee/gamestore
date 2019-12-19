@@ -7,7 +7,6 @@ class CreateSystemRequirements < ActiveRecord::Migration[5.2]
       t.string :graphicsCard
       t.integer :space
       t.references :game, foreign_key: true
-      #, index: {unique:true}, foreign_key: true
 
       t.timestamps
     end
