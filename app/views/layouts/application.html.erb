@@ -9,13 +9,14 @@
   <link>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application" %>
-  <%=image_tag("page-top-bg/1.jpg", alt: "Example Image")%>
-  <%=image_tag("page-top-bg/2.jpg", alt: "Example Image")%>
-  <%=image_tag("page-top-bg/3.jpg", alt: "Example Image")%>
-  <%=image_tag("page-top-bg/4.jpg", alt: "Example Image")%>
-  <%=image_tag("logo.png", alt: "Example Image")%>
+  <%#=image_tag("page-top-bg/1.jpg", alt: "Example Image")%>
+  <%#=image_tag("page-top-bg/2.jpg", alt: "Example Image")%>
+  <%#=image_tag("page-top-bg/3.jpg", alt: "Example Image")%>
+  <%#=image_tag("page-top-bg/4.jpg", alt: "Example Image")%>
+  <%#=image_tag("logo.png", alt: "Example Image")%>
 </head>
 <body>
 
@@ -65,5 +66,23 @@
   </div>
 
   <%= yield %>
+<div style="
+border-top:1px solid #b01ba5;
+    padding-left:10px">
+</div>
+<footer class="footer-section">
+  <div class="container">
+    <a href="#" class="footer-logo">
+      <%=image_tag("logo.png", alt: "Example Image")%>
+    </a>
+    <div class="footer-social d-flex justify-content-center">
+      <a href="#"><i class="fa fa-pinterest"></i></a>
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-dribbble"></i></a>
+      <a href="#"><i class="fa fa-behance"></i></a>
+    </div>
+  </div>
+</footer>
 </body>
 </html>

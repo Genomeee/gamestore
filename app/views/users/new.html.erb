@@ -1,11 +1,12 @@
 <div class="games-section">
-<div id="clearance" class="sign-up">
+  <div class="form" style="width: 20%; margin-left: 37%">
+  <div id="clearance" class="sign-up">
   <h2 style="color: #FFFFFF"><%= t(".title") %></h2>
 
   <%= form_for @user do |form| %>
     <%= render partial: '/users/form', object: form %>
 
-    <div class="submit-field" style="width: 17%; margin-top: 20px; margin-left: 70px">
+    <div class="submit-field form-group" >
       <%= form.submit ({:class => 'btn btn-success, form-control'})%>
     </div>
 
@@ -14,5 +15,6 @@
       <%= link_to t(".sign_in"), sign_in_path %>
     </div>
   <% end %>
+</div>
 </div>
 </div>
